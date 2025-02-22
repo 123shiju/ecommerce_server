@@ -16,20 +16,17 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = [
- "https://timely-ganache-489ae8.netlify.app/",
-];
+const allowedOrigins = ['https://timely-ganache-489ae8.netlify.app/']; 
 
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'], 
+}));
 
-app.options("*", cors());
+
+app.options('*', cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes
