@@ -1,7 +1,6 @@
 const Cart = require("../Models/CartModel");
 const Product = require("../Models/ProductModel");
 
-// Add to Cart
 exports.addToCart = async (req, res) => {
   try {
     const { userId, productId } = req.body;
@@ -47,7 +46,6 @@ exports.addToCart = async (req, res) => {
   }
 };
 
-// Remove Product from Cart
 exports.removeFromCart = async (req, res) => {
   try {
     const { userId, productId } = req.body;

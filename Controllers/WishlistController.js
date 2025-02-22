@@ -10,10 +10,8 @@ exports.addToWishlist = async (req, res) => {
       return res.status(404).json({ message: "Product not found." });
     }
 
-    // Check if the wishlist already exists for this user
     let wishlist = await Wishlist.findOne({ userId });
     if (wishlist) {
-      // Check if the product is already in the wishlist
       const exists = wishlist.products.some(
         (p) => p.productId.toString() === productId
       );
@@ -24,7 +22,6 @@ exports.addToWishlist = async (req, res) => {
       }
     }
 
-    // Add product to wishlist using $addToSet to prevent duplicates
     wishlist = await Wishlist.findOneAndUpdate(
       { userId },
       { $addToSet: { products: { productId } } },
