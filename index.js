@@ -17,8 +17,7 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
-  // "https://product-managment-client.onrender.com",
-  "http://localhost:3000",
+ "https://timely-ganache-489ae8.netlify.app/",
 ];
 
 app.use(
