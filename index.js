@@ -16,7 +16,7 @@ connectDB();
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ['https://timely-ganache-489ae8.netlify.app']; 
+const allowedOrigins = ['https://myecommercehub.netlify.app']; 
 
 app.use(cors({
   origin: allowedOrigins,
