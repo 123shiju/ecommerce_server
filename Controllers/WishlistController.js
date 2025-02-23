@@ -41,9 +41,11 @@ exports.getWishlist = async (req, res) => {
   const { userId } = req.params;
 
   try {
-    const wishlist = await Wishlist.findOne({ userId }).populate(
-      "products.productId"
-    );
+    const wishlist = await Wishlist.findOne({ userId }).populate({
+      path: "products.productId",
+      model: "Product",
+      select: "title images price description",
+    });
 
     if (!wishlist || wishlist.products.length === 0) {
       return res.status(404).json({ message: "Wishlist is empty." });
@@ -51,7 +53,7 @@ exports.getWishlist = async (req, res) => {
 
     res.status(200).json({ wishlist });
   } catch (error) {
-    console.error(error);
+    console.error("Error fetching wishlist:", error);
     res.status(500).json({ message: "Server error." });
   }
 };

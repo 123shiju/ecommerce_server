@@ -5,11 +5,12 @@ const {
   getWishlist,
   removeFromWishlist,
 } = require("../Controllers/WishlistController");
+const { verifyToken } = require("../Middlewares/UserAuth");
 
-router.post("/add", addToWishlist);
+router.post("/add", verifyToken, addToWishlist);
 
-router.get("/:userId", getWishlist);
+router.get("/:userId", verifyToken, getWishlist);
 
-router.post("/remove", removeFromWishlist);
+router.post("/remove", verifyToken, removeFromWishlist);
 
 module.exports = router;

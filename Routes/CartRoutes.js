@@ -6,10 +6,11 @@ const {
   updateQuantity,
 } = require("../Controllers/CartController");
 const router = express.Router();
+const { verifyToken } = require("../Middlewares/UserAuth");
 
-router.post("/add", addToCart);
-router.post("/remove", removeFromCart);
-router.get("/:userId", getCart);
-router.post("/update", updateQuantity);
+router.post("/add", verifyToken, addToCart);
+router.post("/remove", verifyToken, removeFromCart);
+router.get("/:userId", verifyToken, getCart);
+router.post("/update", verifyToken, updateQuantity);
 
 module.exports = router;
