@@ -9,8 +9,8 @@ const router = express.Router();
 const { verifyToken } = require("../Middlewares/UserAuth");
 
 router.post("/add", verifyToken, addToCart);
-router.post("/remove", verifyToken, removeFromCart);
-router.get("/:userId", verifyToken, getCart);
-router.post("/update", verifyToken, updateQuantity);
+router.post("/remove", removeFromCart);
+router.get("/:userId", getCart);
+router.post("/update", updateQuantity);
 
 module.exports = router;
