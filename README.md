@@ -1,40 +1,42 @@
-#  Task Manager Backend
+# E-Commerce Server
 
-This is the backend service for the Task Manager application, built with **Node.js**, **Express.js**, and **MongoDB**. It handles user authentication, task management, and API endpoints.
+This is the backend of an e-commerce application built using **Node.js, Express.js, and MongoDB**. It provides APIs for user authentication, product management, cart and wishlist functionality, and order history.
 
-##  Features
-
-✅ User authentication (Sign Up, Sign In)  
-✅ JWT-based authentication & authorization  
-✅ CRUD operations for tasks (Create, Read, Update, Delete)  
-✅ Real-time updates for task status  
-✅ Middleware for secure API handling  
+## Features
+- **User Authentication**: Register, Login, Logout with JWT authentication.
+- **Product Management**: Fetch products and view product details.
+- **Cart & Wishlist**: Add products to the cart and wishlist.
+- **Order Management**: View order history and order details.
 
 ---
 
-## 🛠 Tech Stack
-
-- **Node.js** - Backend runtime  
-- **Express.js** - Web framework for APIs  
-- **MongoDB** - Database for storing tasks and users  
-- **Mongoose** - ODM for MongoDB  
-- **JWT (JSON Web Tokens)** - Authentication  
-- **CORS** - Cross-Origin Resource Sharing  
+##  Tech Stack
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Token)
+- **Environment Variables**: dotenv
+- **API Testing**: Postman
 
 ---
 
 ##  Installation & Setup
 
-### 1️ **Clone the Repository**
-```bash
+### **1️⃣ Clone the Repository**
 
- cd task-manager-server
+git clone https://github.com/your-username/ecommerce-server.git
+cd backend folder
+2️⃣ Install Dependencies
 
+npm install
+3️⃣ Create a .env File
+PORT=5000
+MongoDB_URI=mongdb atlas or local URI
+JWT_SECRET=your_jwt_secret
 
-## Install Dependencies
-Configure Environment Variables
-
-Run the Server
+4️⃣ Run the Server
 
 npm start
+
+
+
 
