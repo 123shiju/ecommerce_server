@@ -23,7 +23,7 @@ This is the backend of an e-commerce application built using **Node.js, Express.
 
 ### **1️⃣ Clone the Repository**
 
-git clone https://github.com/your-username/ecommerce-server.git
+git clone git server respository url
 cd backend folder
 2️⃣ Install Dependencies
 
